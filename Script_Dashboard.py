@@ -52,7 +52,7 @@ base_skull = None
 if metodo == "Google Drive":
     # Link de exemplo (substitua pelo seu link de download direto do Google Drive)
     link_drive = "https://docs.google.com/spreadsheets/d/1f6MLnCLyJ85v3_2mqnOsAm7GU-Naqijw/edit?usp=drive_link&ouid=118021272873758968461&rtpof=true&sd=true"
-    base_skull = carregar_google_drive(link_drive)
+    base_skull = carregar_google_drive(link_drive, engine='openpyxl')
 
 elif metodo == "GitHub":
     # Link de exemplo (substitua pelo seu link raw do GitHub)
