@@ -52,11 +52,12 @@ for vendedor, skus_vendidos in vendedores_skus.items():
     # Remover duplicatas e criar lista única
     skus_nao_vendidos_lista = ", ".join(skus_nao_vendidos_completa.apply(lambda row: f"{row['CATEGORIA']} - {row['PRODUTO']}", axis=1).drop_duplicates())
     
+    # Adicionar as informações ao resumo
     resumo_vendedores.append({
         "FUNCIONÁRIO": vendedor,
         "SKUs Não Vendidos (Quantidade)": len(skus_nao_vendidos),
         "SKUs Não Vendidos (Lista)": skus_nao_vendidos_lista,
-        "SKUs Não Vendidos (Tabela)": skus_nao_vendidos_completa
+        "SKUs Não Vendidos (Tabela)": skus_nao_vendidos_completa.drop_duplicates()  # Remover duplicatas na tabela
     })
 
 # Converter o resumo para um DataFrame
@@ -86,7 +87,7 @@ if vendedor_selecionado:
     
     st.write(f"**SKUs Não Vendidos (Quantidade):** {vendedor_info['SKUs Não Vendidos (Quantidade)'].values[0]}")
     
-    # Exibir a tabela com SKUs não vendidos
+    # Exibir a tabela com SKUs não vendidos, sem duplicatas
     st.write("**SKUs Não Vendidos (Tabela):**")
     st.dataframe(vendedor_info['SKUs Não Vendidos (Tabela)'].values[0], use_container_width=True)
 
