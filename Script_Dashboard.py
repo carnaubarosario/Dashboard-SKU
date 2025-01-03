@@ -5,7 +5,7 @@ import streamlit as st
 st.title("Dashboard de SKUs Não Vendidos por Vendedor")
 
 # URL do arquivo Excel (substitua pela URL real do arquivo)
-url_arquivo = "https://docs.google.com/spreadsheets/d/1f6MLnCLyJ85v3_2mqnOsAm7GU-Naqijw/edit?usp=drive_link&ouid=118021272873758968461&rtpof=true&sd=true"  # Insira a URL do seu arquivo
+url_arquivo = "https://github.com/carnaubarosario/Dashboard-SKU/blob/67f484d6e8505a38492f7dc907d602e153bf4670/Qlik%20Sense%20-%20DB%20ROTAS%20POR%20SKULL%20-%202%20de%20janeiro%20de%202025.xlsx"  # Insira a URL do seu arquivo
 
 
 # Verificar se o arquivo foi carregado
