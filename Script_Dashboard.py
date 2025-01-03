@@ -5,7 +5,7 @@ import streamlit as st
 st.title("Dashboard de SKUs Não Vendidos por Vendedor")
 
 # Fazer upload do arquivo Excel
-uploaded_file = st.file_uploader("c:\Users\lucca.peixoto\Downloads\Qlik Sense - DB ROTAS POR SKULL - 2 de janeiro de 2025.xlsx", type=["xlsx"])
+uploaded_file = st.file_uploader(r"c:\Users\lucca.peixoto\Downloads\Qlik Sense - DB ROTAS POR SKULL - 2 de janeiro de 2025.xlsx", type=["xlsx"])
 
 # Verificar se o arquivo foi carregado
 if uploaded_file is not None:
