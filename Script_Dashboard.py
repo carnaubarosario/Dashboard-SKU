@@ -55,7 +55,8 @@ for vendedor, skus_vendidos in vendedores_skus.items():
     resumo_vendedores.append({
         "FUNCIONÁRIO": vendedor,
         "SKUs Não Vendidos (Quantidade)": len(skus_nao_vendidos),
-        "SKUs Não Vendidos (Lista)": skus_nao_vendidos_lista
+        "SKUs Não Vendidos (Lista)": skus_nao_vendidos_lista,
+        "SKUs Não Vendidos (Tabela)": skus_nao_vendidos_completa
     })
 
 # Converter o resumo para um DataFrame
@@ -84,8 +85,10 @@ if vendedor_selecionado:
     skus_nao_vendidos_lista_unica = sorted(list(set(skus_nao_vendidos_lista_unica)))  # Remover duplicatas e ordenar
     
     st.write(f"**SKUs Não Vendidos (Quantidade):** {vendedor_info['SKUs Não Vendidos (Quantidade)'].values[0]}")
-    st.write("**SKUs Não Vendidos (Lista):**")
-    st.text(", ".join(skus_nao_vendidos_lista_unica))
+    
+    # Exibir a tabela com SKUs não vendidos
+    st.write("**SKUs Não Vendidos (Tabela):**")
+    st.dataframe(vendedor_info['SKUs Não Vendidos (Tabela)'].values[0], use_container_width=True)
 
 # Filtros adicionais para explorar os dados
 st.sidebar.title("Filtros")
