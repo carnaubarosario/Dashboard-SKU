@@ -5,7 +5,7 @@ import streamlit as st
 url_arquivo = 'https://raw.githubusercontent.com/carnaubarosario/Dashboard-SKU/830cef041b5894e2b0ec90d32b30f19826aa702c/Qlik%20Sense%20-%20DB%20ROTAS%20POR%20SKULL%20-%202%20de%20janeiro%20de%202025.xlsx'
 
 # Carregar a base de dados do GitHub diretamente
-@st.cache
+@st.cache_data
 def carregar_base_skull(url):
     base_skull = pd.read_excel(url, engine='openpyxl')
     return base_skull
