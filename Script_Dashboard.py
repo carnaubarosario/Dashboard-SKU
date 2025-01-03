@@ -4,13 +4,14 @@ import streamlit as st
 # Título do Dashboard
 st.title("Dashboard de SKUs Não Vendidos por Vendedor")
 
-# Fazer upload do arquivo Excel
-uploaded_file = st.file_uploader(r"c:\Users\lucca.peixoto\Downloads\Qlik Sense - DB ROTAS POR SKULL - 2 de janeiro de 2025.xlsx", type=["xlsx"])
+# URL do arquivo Excel (substitua pela URL real do arquivo)
+url_arquivo = "https://docs.google.com/spreadsheets/d/1f6MLnCLyJ85v3_2mqnOsAm7GU-Naqijw/edit?usp=drive_link&ouid=118021272873758968461&rtpof=true&sd=true"  # Insira a URL do seu arquivo
+
 
 # Verificar se o arquivo foi carregado
-if uploaded_file is not None:
+if url_arquivo is not None:
     # Carregar a base de dados a partir do arquivo enviado
-    base_skull = pd.read_excel(uploaded_file)
+    base_skull = pd.read_excel(url_arquivo)
     st.success("Base de dados carregada com sucesso!")
 else:
     # Caminho para um arquivo padrão no ambiente local (caso exista)
